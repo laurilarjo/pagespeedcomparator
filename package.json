@@ -1,0 +1,14 @@
+{
+  "name": "node-pagespeedcomparator",
+  "version": "1.0.0",
+  "description": "Test page load speeds",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.2"
+  }
+}
