@@ -1,14 +1,17 @@
 {
-  "name": "node-pagespeedcomparator",
-  "version": "1.0.0",
-  "description": "Test page load speeds",
-  "main": "app.js",
+  "name": "pagespeedcomparator",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "test"
+    "start": "node ./bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.11.2"
+    "body-parser": "~1.10.2",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "express": "~4.11.1",
+    "jade": "~1.9.1",
+    "morgan": "~1.5.1",
+    "serve-favicon": "~2.2.0"
   }
 }

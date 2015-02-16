@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p. 
+    Give me the client's website you want to speed test!
+    
+  form#formUrl(name="url",method="post",action="/urls/speedtesturl")
+    input#inputUrl(type="text", placeholder="url", name="url")
+    button#btnSubmit(type="submit") submit
