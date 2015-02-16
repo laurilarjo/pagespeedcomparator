@@ -2,6 +2,7 @@ var express = require('express');
 var request = require('superagent');
 var fs = require('fs');
 var md5 = require('MD5');
+var csv = require('csv-parse');
 
 var router = express.Router();
 
@@ -37,10 +38,14 @@ speedtesturl = function(url) {
 				fs.writeFile(csvFilePath, result_2.text);
 			}
 			
+			
+			
 		});
 	//})
-	var results='That is my first Node app.';
-  
+	var results={"url":inputUrl, 
+				"1st":{"loadTime":"5.5", "activityTime":"6.5"},
+				"2nd":{"loadTime":"3.4", "activityTime":"4.5"}
+				};
 	return results;
 }
 
