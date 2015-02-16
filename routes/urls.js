@@ -2,7 +2,8 @@ var express = require('express');
 var request = require('superagent');
 var fs = require('fs');
 var md5 = require('MD5');
-var csv = require('csv-parse');
+var parse = require('csv-parse');
+//require('should');
 
 var router = express.Router();
 
@@ -37,16 +38,25 @@ speedtesturl = function(url) {
 				var csvFilePath = './temp/'+md5(inputUrl)+'.csv';
 				fs.writeFile(csvFilePath, result_2.text);
 			}
-			
+			parse(result_2.text, {comment:'#'}, function(err, output){
+				//console.log(output);
+				for(var i=0; i<output[0].length; i++){
+					if(output[0][i]=='Load Time (ms)')
+						var loadIndex = i;
+					if(output[0][i]=='Activity Time(ms)')
+						var activityIndex = i;
+				}
+				var results={"url":inputUrl, "first":{"loadTime":output[1][loadIndex], "activityTime":output[1][activityIndex]}, "second":{"loadTime":output[2][loadIndex], "activityTime":output[2][activityIndex]}
+				};
+				console.log(results);
+				return results;
+				
+			});
 			
 			
 		});
 	//})
-	var results={"url":inputUrl, 
-				"1st":{"loadTime":"5.5", "activityTime":"6.5"},
-				"2nd":{"loadTime":"3.4", "activityTime":"4.5"}
-				};
-	return results;
+	
 }
 
 module.exports = router;
