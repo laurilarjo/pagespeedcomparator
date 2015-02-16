@@ -6,9 +6,9 @@
     "start": "node ./bin/www"
   },
   "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/laurilarjo/pagespeedcomparator.git"
-  }
+  { "type" : "git", 
+    "url" : "https://github.com/laurilarjo/pagespeedcomparator.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,8 +19,8 @@
     "express": "~4.11.1",
     "jade": "~1.9.1",
     "morgan": "~1.5.1",
-    "serve-favicon": "~2.2.0"
-	"MD5": "^1.2.1",
+    "serve-favicon": "~2.2.0",
+	  "MD5": "^1.2.1",
     "fs": "0.0.2",
     "superagent": "^0.21.0"
   }
